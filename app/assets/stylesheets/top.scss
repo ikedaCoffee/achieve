@@ -50,11 +50,6 @@ header {
   }
 }
 
-.flash {
-  color: white;
-  padding-top: 10px;
-}
-
 .main-header {
   padding-bottom: 15%;
   width: 100%;
@@ -123,4 +118,9 @@ body {
   &:hover {
     opacity: 0.7;
   }
+}
+
+.flash {
+  color: white;
+  padding-top: 10px;
 }
