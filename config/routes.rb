@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :blogs do
+    resources :comments
+    post :confirm, on: :collection
+  end
+
   root 'top#index'
 
   if Rails.env.development?
