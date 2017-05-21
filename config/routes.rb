@@ -14,11 +14,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
-    collection do
-      post :confirm
-    end
-  end
+  # resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
+  #   collection do
+  #     post :confirm
+  #   end
+  # end
 
   resources :blogs do
     resources :comments
