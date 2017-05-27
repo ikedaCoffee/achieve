@@ -1,0 +1,4 @@
+<% user.followed_users.each do |followed_user| %>
+  <p class="user-image"><%= profile_img(followed_user) %></p>
+  <p><%= followed_user.name %></p>
+<% end %>
