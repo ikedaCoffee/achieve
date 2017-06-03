@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'relationships/create'
+  get 'notifications/index'
 
-  get 'relationships/destroy'
+  resources :conversations do
+    resources :messages
+  end
 
   resources :poems, only: [:index, :show]
 

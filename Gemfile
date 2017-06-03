@@ -69,6 +69,8 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'pusher'
+
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
