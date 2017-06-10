@@ -1,10 +1,10 @@
-#ワーカーの数
+#ワーカーの数。後述
 $worker  = 2
 #何秒経過すればワーカーを削除するのかを決める
 $timeout = 30
-#自分のアプリケーション名、currentがつくことに注意
+#自分のアプリケーション名、currentがつくことに注意。
 $app_dir = "/var/www/achieve/current"
-#リクエストを受け取るポート番号を指定
+#リクエストを受け取るポート番号を指定。後述
 $listen  = File.expand_path 'tmp/sockets/unicorn.sock', $app_dir
 #PIDの管理ファイルディレクトリ
 $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
@@ -23,7 +23,7 @@ pid $pid
 #ホットデプロイをするかしないかを設定
 preload_app true
 
-#fork前に行うことを定義
+#fork前に行うことを定義。後述
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
   old_pid = "#{server.config[:pid]}.oldbin"
