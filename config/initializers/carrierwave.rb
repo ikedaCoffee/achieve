@@ -1,21 +1,21 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
-    provider: 'AWS',
-    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-    region: 'ap-northeast-1',
-    path_style: true,
+      provider:              'AWS',
+      aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
+      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+      region:                'ap-northeast-1',
+      path_style:            true,
   }
 
-  config.fog_public = true
-  config.fig_attributes = {'Cache-Control' => 'public, max-age=86400'}
+  config.fog_public     = true
+  config.fog_attributes = {'Cache-Control' => 'public, max-age=86400'}
 
   case Rails.env
-  when 'production'
-    config.fog_directory = 'acheive-production-1'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/acheive-production-1'
-  when 'development'
-    config.fog_directory = 'acheive-development-1'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/achieve-development-1'
+    when 'production'
+      config.fog_directory = 'acheive-production-1'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/acheive-production-1'
+    when 'development'
+      config.fog_directory = 'acheive-development-1'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/acheive-development-1'
   end
 end
