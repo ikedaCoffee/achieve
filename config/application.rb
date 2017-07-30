@@ -26,6 +26,8 @@ module Achieve
     config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
 
     config.generators do |g|
+      g.assets false
+      g.helper false
       g.test_framework :rspec,
         fixture: true,
         view_specs: false,
